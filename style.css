@@ -1,0 +1,462 @@
+*{
+    box-sizing: border-box;
+}
+
+/*p1用*/
+body {
+    margin: 0;
+    font-family: "Noto+Sans+TC",sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+.page1 {
+    background: 
+        linear-gradient(0deg, transparent 24%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 76%, transparent 77%, transparent),
+        #e4aeae;
+    background-size: 100px 100px; /* 调整网格大小 */
+}
+
+.page2 {
+    background:
+        linear-gradient(0deg, transparent 24%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 76%, transparent 77%, transparent),
+        #673232;
+    background-size: 100px 100px; /* 调整网格大小 */
+}
+
+.page4 {
+    background:
+        linear-gradient(0deg, transparent 24%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 76%, transparent 77%, transparent),
+        #e4aeae;
+    background-size: 100px 100px; /* 调整网格大小 */
+}
+
+.page3 {
+    background: 
+        linear-gradient(0deg, transparent 24%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 76%, transparent 77%, transparent),
+        #cbaaaa;
+    background-size: 100px 100px; /* 调整网格大小 */
+}
+
+.page5 {
+    background: 
+        linear-gradient(0deg, transparent 24%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 76%, transparent 77%, transparent),
+        #4a3232;
+    background-size: 100px 100px;
+}
+
+.page-result {
+    background: #fbfbfb;
+}
+
+
+
+.container{
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+/*header*/
+header {
+
+    flex: 1; 
+}
+
+
+header .container {
+    display: flex;
+    flex-direction: column; /* 修改為縱向排列 */
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container {
+    position: relative;
+    width: 150%; /* 确保容器宽度 */
+    height: auto; /* 确保容器高度自适应 */
+}
+
+.character-img {
+    max-width: 100%;
+    position: absolute;
+}
+
+.img1 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3; /* 保证 img1 在 img2 之上 */
+    animation: float 3s ease-in-out infinite;
+}
+
+.img2 {
+    top: 5px; /* 根据需要调整这个值以控制重叠部分的大小 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* 保证 img2 在 img1 之下 */
+}
+.img3 {
+    top: -10px; /* 根据需要调整这个值以控制重叠部分的大小 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* 保证 img2 在 img1 之下 */
+    animation: float2 3s ease-in-out infinite;
+}
+
+.fixed-header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* 确保该元素在最前面 */
+}
+.fixed-header2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* 确保该元素在最前面 */
+}
+
+.top-bar-img {
+    width: 100%;
+    height: auto;
+}
+
+
+.button-container {
+    position: relative;
+    top: 700px; /* 距离图片 .img2 底部20px的位置，可根据需要调整 */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 9;
+}
+
+.start-button {
+    margin-bottom: 50px; /* 添加底部空白 */
+    padding: 20px 150px;
+    font-size: 16px;
+    color: white;
+    background-color: #ab5153;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-button:hover {
+    background-color: #cf9899;
+}
+
+/*NEXT*/
+.container-next {
+    position: relative;
+    top: 660px; /* 距離圖片 .img2 底部的位置，可根據需要調整 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+    display: flex;
+    justify-content: center; /* 水平居中對齊 */
+    animation: float 3s ease-in-out infinite;
+}
+
+.next-img{
+    margin-bottom: 50px; /* 添加底部空白 */
+    width: 460px;  /* 设置图像宽度 */
+    height: auto;  /* 根据宽度等比例缩放高度 */
+    transition: transform 0.3s ease; /* 添加平滑過渡效果 */
+    cursor: pointer;
+}
+
+.next-img:hover {
+    transform: scale(1.1); /* 懸停時放大10% */
+}
+/*NEXT*/
+
+.container_text{
+    position: relative;
+    width: 85%;
+    top:650px; /* 根据需要调整这个值以控制文字位置 */
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 4;
+}
+/*p1用*/
+
+/*p2用*/
+.button-container-p2 {
+    /*排版*/
+    position: relative;
+    margin: auto;
+    top: 500px; /* 距离图片 .img2 底部的位置，可根据需要调整 */
+    bottom: -10;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 9;
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中对齐 */
+    gap: 5px; /* 按钮之间的间距，可根据需要调整 */
+}
+
+.p2-button{
+    /*文字*/
+    font-size: 15px; /* 文字大小，根据需要调整 */
+    letter-spacing: 2px;
+    line-height: 1.5;
+    /*排版*/    
+    margin-bottom: 35px; /* 添加底部空白，會影響gap */
+    padding: 20px 50px;
+    font-size: 16px;
+    color: white;
+    background-color: #cf9899;
+    border: none;
+    border-radius: 5px;
+    width: 100%; /* 设置自适应宽度 */
+    max-width: 550px; /* 限制最大宽度 */
+    transition: background-color 0.3s;
+    transition: transform 0.5s ease;
+}
+.p2-button:hover {
+    background-color: #ab5153;
+    transform: scale(1.1);
+}
+
+.p2img1 {
+    top: -170px;
+    left: 50%;
+    max-width: 70%;
+    transform: translateX(-50%);
+    z-index: 1; /* 保证 img1 在 img2 之上 */
+}
+.p2img2 {
+    top: -210px;
+    left: 50%;
+    max-width: 80%;
+    transform: translateX(-50%);
+    z-index: 1; /* 保证 img1 在 img2 之上 */
+    animation: float 2s ease-in-out infinite;
+}
+
+
+.text-container {
+    position: relative;
+    top: 450px; /* 根据需要调整这个值以控制文字位置 */
+    text-align: center;
+    color: white; /* 文字颜色，根据需要调整 */
+    margin: 20px 0; /* 文字上下的外边距 */
+    z-index: 4;
+}
+
+.center-text {
+    font-size: 20px; /* 文字大小，根据需要调整 */
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+/*p2用*/
+
+/*p3*/
+.p3-button{
+    /*文字*/
+    font-size: 15px; /* 文字大小，根据需要调整 */
+    letter-spacing: 2px;
+    line-height: 1.5;
+    margin-bottom: 35px; /* 添加底部空白，會影響gap */
+    padding: 20px 50px;
+    font-size: 16px;
+    color: white;
+    background-color: #986a6a;
+    border: none;
+    border-radius: 5px;
+    width: 100%; /* 设置自适应宽度 */
+    max-width: 550px; /* 限制最大宽度 */
+    transition: background-color 0.3s;
+    transition: transform 0.5s ease;
+}
+.p3-button:hover {
+    background-color: #794c4c;
+    transform: scale(1.1);
+}
+/*p3*/
+
+/*p5*/
+.p5-button{
+    /*文字*/
+    font-size: 15px; /* 文字大小，根据需要调整 */
+    letter-spacing: 2px;
+    line-height: 1.5;
+    margin-bottom: 35px; /* 添加底部空白，會影響gap */
+    padding: 20px 50px;
+    font-size: 16px;
+    color: #4a3232;
+    background-color: #9f8888;
+    border: none;
+    border-radius: 5px;
+    width: 100%; /* 设置自适应宽度 */
+    max-width: 550px; /* 限制最大宽度 */
+    transition: background-color 0.3s;
+    transition: transform 0.5s ease;
+}
+.p5-button:hover {
+    background-color: #624848;
+    transform: scale(1.1);
+}
+/*p5*/
+
+/*result*/
+.reset-button {
+    /*文字*/
+    font-size: 15px; /* 文字大小，根据需要调整 */
+    letter-spacing: 2px;
+    line-height: 1.5;
+    /*排版*/    
+    margin-top: 150px;
+    margin-bottom: 20px; /* 添加底部空白，會影響gap */
+    padding: 20px 50px;
+    font-size: 16px;
+    color: rgb(155, 134, 134);
+    background-color: #e9e9e9;
+    border: none;
+    border-radius: 5px;
+    width: 100%; /* 设置自适应宽度 */
+    max-width: 550px; /* 限制最大宽度 */
+    transition: background-color 0.3s;
+    transition: transform 0.5s ease;
+}
+
+.reset-button:hover {
+    color: rgb(230, 230, 230);
+    background-color: #968282;
+    transform: scale(1.1);
+}
+/*result*/
+
+.re-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 150vh; /* 使容器充满视口高度 */
+    background-size: cover; /* 背景图片完全覆盖容器 */
+    background-position: top;
+
+
+}
+
+.second-image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    animation: float 3s ease-in-out infinite; /* 应用动画效果 */
+}
+
+
+
+/*animations*/
+/*1*/
+@keyframes float {
+    0% {
+        transform: translateX(-50%) translateY(-10);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+/*1*/
+@keyframes float2 {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+.float2 {
+    animation: float2 3s ease-in-out infinite;
+}
+
+@media (max-width:700px) {
+    .container-next {
+        top: 350px; /* 距離圖片 .img2 底部的位置，可根據需要調整 */
+    }
+    
+    .next-img{
+        width: 360px;  /* 设置图像宽度 */
+
+    }
+
+    .container_text{
+        width: 120%;
+        top:300px; /* 根据需要调整这个值以控制文字位置 */
+    }
+
+    .p2img1 {
+        top: -35px;
+        left: 50%;
+        max-width: 70%;
+        transform: translateX(-50%);
+        z-index: 1; /* 保证 img1 在 img2 之上 */
+
+    }
+    .p2img2 {
+        top: -45px;
+        left: 50%;
+        max-width: 80%;
+        transform: translateX(-50%);
+        z-index: 1; /* 保证 img1 在 img2 之上 */
+        animation: float 2s ease-in-out infinite;
+    }
+    
+    .text-container {
+        top: 300px; /* 根据需要调整这个值以控制文字位置 */
+        margin: 20px 50px; /* 文字上下的外边距 */
+    }
+    
+    .center-text {
+        font-size: 15px; /* 文字大小，根据需要调整 */
+    }
+
+    .button-container-p2 {
+        top: 330px; /* 距离图片 .img2 底部的位置，可根据需要调整 */
+    }
+
+    .p2-button{
+        font-size: 14.5px;
+        max-width: 400px;
+    }
+
+    .p3-button{
+        font-size: 14.5px;
+        max-width: 400px; 
+    }
+
+    .p5-button{
+        font-size: 14.5px;
+        max-width: 400px; 
+    }
+
+    .reset-button {
+        font-size: 14px; /* 文字大小，根据需要调整 */
+        margin-top: 350px;
+        margin-bottom: 0px; /* 添加底部空白，會影響gap */
+        max-width: 300px; /* 限制最大宽度 */
+    }
+}

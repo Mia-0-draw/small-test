@@ -1,0 +1,155 @@
+*{
+    box-sizing: border-box;
+}
+
+/*p1用*/
+body {
+    margin: 0;
+    font-family: "Noto+Sans+TC",sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+.fixed-header2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* 确保该元素在最前面 */
+}
+
+.top-bar-img {
+    width: 100%;
+    height: auto;
+}
+
+.transition-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: 
+        linear-gradient(0deg, transparent 24%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 76%, transparent 77%, transparent),
+        #e4aeae;
+    background-size: 100px 100px; /* 调整网格大小 */
+}
+/*p1用*/
+
+
+
+.heart-container {
+    position: fixed;
+    text-align: center;
+    z-index: 4;
+}
+.heart-container2 {
+    position: fixed;
+    text-align: center;
+    z-index: 3;
+}
+
+.heart {
+    font-size: 100px; /* 設置愛心大小 */
+    animation: fillHeart 2s ease-out forwards;
+}
+
+#progress {
+    position: relative;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: white; /* 將文字顏色設置為白色 */
+    z-index: 3;
+}
+
+
+@keyframes fillHeart {
+    0% {
+        color: rgb(255, 255, 255);
+        transform: scale(0);
+    }
+    50% {
+        color: rgb(239, 209, 209);
+        transform: scale(0.6); /* 填充至一半 */
+    }
+    90% {
+        color: rgb(216, 132, 132);
+        transform: scale(1.5);
+    }
+    96% {
+        color: rgb(213, 97, 97);
+        transform: scale(1.4);
+    }
+    100% {
+        color: rgb(186, 64, 64);
+        transform: scale(1.45);
+    }
+}
+
+@keyframes screenani {
+    0% {
+        transform: scale(0);
+    }
+
+    90% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1.45);
+    }
+}
+
+#result-btn {
+    /*文字*/
+    font-size: 15px; /* 文字大小，根据需要调整 */
+    letter-spacing: 2px;
+    line-height: 1.5;
+    /*排版*/    
+    margin-bottom: 100px; /* 添加底部空白，會影響gap */
+    padding: 20px 50px;
+    font-size: 16px;
+    position: absolute; /* 使用絕對定位 */
+    bottom: 20px; /* 距離底部的距離 */
+    left: 50%; /* 水平居中 */
+    transform: translateX(-50%); /* 水平居中 */
+    color: rgb(171, 106, 106);
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    width: 100%; /* 设置自适应宽度 */
+    max-width: 550px; /* 限制最大宽度 */
+    transition: background-color 0.3s;
+    transition: transform 0.5s ease;
+    z-index: 3;
+}
+#result-btn:hover {
+    color: rgb(226, 226, 226);
+    background-color: #ab5153;
+    transform: translateX(-50%) scale(1.1);
+
+}
+
+.image-below-heart {
+
+    top: 310px; /* 調整此值以將圖片下移 */
+
+
+    width: 180px; /* 設置圖片寬度 */
+    height: auto; /* 自動計算高度 */
+    z-index: 2; /* 設置圖片的堆放順序，在愛心之下 */
+    animation: screenani 0.6s ease-out forwards;
+}
+
+@media (max-width:700px) {
+    #result-btn {
+        font-size: 15px;
+        max-width: 300px; /* 限制最大宽度 */
+    }
+
+}
