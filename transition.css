@@ -75,19 +75,19 @@ body {
     }
     50% {
         color: rgb(239, 209, 209);
-        transform: scale(0.6); /* 填充至一半 */
+        transform: scale(0.3); /* 填充至一半 */
     }
     90% {
         color: rgb(216, 132, 132);
-        transform: scale(1.5);
+        transform: scale(0.6);
     }
     96% {
         color: rgb(213, 97, 97);
-        transform: scale(1.4);
+        transform: scale(0.7);
     }
     100% {
         color: rgb(186, 64, 64);
-        transform: scale(1.45);
+        transform: scale(0.8);
     }
 }
 
